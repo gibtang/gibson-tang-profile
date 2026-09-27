@@ -22,6 +22,8 @@
     nav a:hover { color: var(--accent); text-decoration: underline; }
     main { padding-bottom: 80px; }
     .hero { padding: 100px 0 95px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 48px; align-items: center; }
+    .hero-photo { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 30%; }
     .eyebrow { color: var(--accent); text-transform: uppercase; font-size: .78rem; font-weight: 700; letter-spacing: .14em; margin: 0 0 24px; }
     h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(3.2rem, 8vw, 6.2rem); line-height: 1.05; letter-spacing: -.035em; font-weight: 700; margin: 0 0 24px; }
     .lead { font-size: clamp(1.18rem, 2.7vw, 1.55rem); line-height: 1.48; max-width: 660px; margin: 0; color: var(--muted); }
@@ -42,6 +44,8 @@
     .talks p { margin: 0; color: var(--muted); font-size: .95rem; }
     .photo-slot { margin: 0; width: 100%; aspect-ratio: 3 / 2; border: 1px dashed #b3c2d4; background: var(--wash); color: var(--muted); display: grid; place-items: center; text-align: center; font-size: .78rem; line-height: 1.4; padding: 12px; }
     .talk-photo { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .talk-stack { display: grid; gap: 10px; }
+    .talk-stack img { display: block; width: 100%; height: auto; }
     .talks figure { margin: 0; }
     .contact { background: var(--wash); padding: 36px; border: none; margin-top: 64px; }
     .contact p { margin: 0; color: var(--muted); }
@@ -52,11 +56,13 @@
       header { padding: 19px 0; }
       nav { gap: 14px; }
       .hero { padding: 76px 0 72px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-photo { max-width: 330px; }
       section { padding: 52px 0; }
       .career li { grid-template-columns: 1fr; gap: 2px; }
       .talks li { grid-template-columns: 1fr; gap: 4px; }
       .talks figure { margin-top: 12px; }
-      .photo-slot, .talk-photo { max-width: 330px; }
+      .photo-slot, .talk-photo, .talk-stack { max-width: 330px; }
       .contact { margin-top: 52px; padding: 28px 24px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -65,7 +71,7 @@
 <body>
   <header><div class="wrap"><a class="brand" href="#top">Gibson Tang</a><nav aria-label="Page navigation"><a href="#about">About</a><a href="#career">Career</a><a href="#speaking">Speaking</a><a href="#contact">Contact</a></nav></div></header>
   <main id="top" class="wrap">
-    <div class="hero"><p class="eyebrow">AI · Software engineering · Singapore</p><h1>Gibson Tang</h1><p class="lead">I lead engineering teams and share ideas on AI and software engineering - from how we build software to how we work with AI agents.</p></div>
+    <div class="hero"><div class="hero-grid"><div><p class="eyebrow">AI · Software engineering · Singapore</p><h1>Gibson Tang</h1><p class="lead">I lead engineering teams and share ideas on AI and software engineering - from how we build software to how we work with AI agents.</p></div><img class="hero-photo" src="images/hero-speaking.jpg" alt="Gibson Tang speaking on a panel at Singapore DevOps Conference 2026"></div></div>
     <section id="about" aria-labelledby="about-heading"><h2 id="about-heading">About</h2><p class="bio">I am Director of Engineering at Mighty Jaxx, with 25+ years in tech. I bring hands-on software experience and engineering leadership to conversations about AI, software delivery and the future of engineering teams. I also mentor with JuniorDevSG x WomenDevsSG.</p></section>
     <section id="career" aria-labelledby="career-heading"><h2 id="career-heading">Career</h2><p class="bio">From building software to leading engineering teams across Singapore and Southeast Asia.</p><ul class="career">
       <li><span class="when">Sep 2022 - present</span><div><h3>Director of Engineering</h3><p>Mighty Jaxx</p></div></li>
@@ -76,12 +82,11 @@
     <!-- To add a real talk photo later: replace that talk's <div class="photo-slot">...</div> with <img class="talk-photo" src="images/your-photo.jpg" alt="Gibson Tang speaking at [event]">. Put the photo at that relative path beside this HTML file. -->
     <section id="speaking" aria-labelledby="speaking-heading"><h2 id="speaking-heading">Speaking</h2><ul class="talks">
       <li><time datetime="2026-09-29">29 Sep 2026</time><div><h3>Tech Week Singapore</h3><p>"Collaboration with AI Agents" · 11:35 am · Marina Bay Sands, Singapore</p></div><figure><div class="photo-slot" role="img" aria-label="Placeholder for Tech Week Singapore talk photo">Talk photo<br>coming soon</div></figure></li>
-      <li><time datetime="2026-09-24">24 Sep 2026</time><div><h3>DevOps Summit Singapore 2026</h3><p>Panel: "Exploring the Evolving Socio-Technical Architecture of Software Enabled Organisations"</p></div><figure><div class="photo-slot" role="img" aria-label="Placeholder for DevOps Summit Singapore panel photo">Panel photo<br>coming soon</div></figure></li>
-      <li><time datetime="2026-08-27">27 Aug 2026</time><div><h3>Singapore DevOps Conference 2026</h3><p>Panel: "Transforming Software Delivery With DevSecOps And AI"</p></div><figure><div class="photo-slot" role="img" aria-label="Placeholder for Singapore DevOps Conference panel photo">Panel photo<br>coming soon</div></figure></li>
+      <li><time datetime="2026-09-24">24 Sep 2026</time><div><h3>DevOps Summit Singapore 2026</h3><p>Panel: "Exploring the Evolving Socio-Technical Architecture of Software Enabled Organisations"</p></div><figure class="talk-stack"><img src="images/panel-devops-summit-2026-wide.jpg" alt="Panel discussion at DevOps Summit Singapore 2026 with Gibson Tang and fellow panelists on stage"><img src="images/panel-devops-summit-2026-side.jpg" alt="Gibson Tang speaking during the panel at DevOps Summit Singapore 2026"></figure></li>
+      <li><time datetime="2026-08-27">27 Aug 2026</time><div><h3>Singapore DevOps Conference 2026</h3><p>Panel: "Transforming Software Delivery With DevSecOps And AI"</p></div><figure><img class="talk-photo" src="images/panel-devops-conference-2026.jpg" alt="Panel discussion at Singapore DevOps Conference 2026 with Gibson Tang and fellow panelists on stage"></figure></li>
     </ul></section>
     <section id="contact" class="contact" aria-labelledby="contact-heading"><h2 id="contact-heading">Get in touch</h2><p>For speaking and professional enquiries:</p><a href="mailto:gibtang@gmail.com">gibtang@gmail.com</a><br><a href="https://wa.me/6596565537">+65 9656 5537 (WhatsApp)</a></section>
   </main>
   <footer class="wrap">© 2026 Gibson Tang · Singapore</footer>
 </body>
 </html>
-
