@@ -90,6 +90,8 @@
     .career li:last-child { border-bottom: 0; padding-bottom: 0; }
     .career h3 { font-size: 16px; font-weight: 600; }
     .career p { text-align: right; color: var(--muted); font-size: 14px; }
+    .career .dates { display: block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; margin-top: 3px; }
+    .career .detail { grid-column: 1 / -1; text-align: left; font-size: 14px; line-height: 1.65; margin-top: 2px; }
     .upcoming { margin-top: 35px; padding: 30px; background: #eaece7; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
     .upcoming .small-label { color: #41573e; }
     .upcoming h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; line-height: 1.25; letter-spacing: -.02em; margin-top: 13px; }
@@ -234,11 +236,22 @@
               <li>Leads AI strategy and practical automation initiatives.</li>
             </ul>
           </article>
-          <!-- CONTENT PLACEHOLDER: add verified dates and one concrete contribution for each earlier role. Do not invent dates or outcomes. -->
           <ul class="career" aria-label="Earlier leadership roles">
-            <li><h3>SEA Engineering Lead</h3><p>Lenskart</p></li>
-            <li><h3>Head of Engineering</h3><p>DishDash.co</p></li>
-            <li><h3>CTO</h3><p>A Better Florist</p></li>
+            <li>
+              <h3>SEA Engineering Lead</h3>
+              <p>Lenskart<span class="dates">March 2021 – September 2022</span></p>
+              <p class="detail">First SEA engineering hire at the SoftBank and Temasek-backed unicorn. Grew the team from 1 to 11 developers in six months across mobile, fulfillment, e-commerce and data engineering, and rolled the Singapore platform out to Vietnam, Indonesia and Malaysia.</p>
+            </li>
+            <li>
+              <h3>Head of Engineering</h3>
+              <p>DishDash.co<span class="dates">January 2018 – December 2020</span></p>
+              <p class="detail">Took over outsourced development and grew the mobile engineering team in Singapore. Re-architected the custom-built B2B e-commerce platform to support multiple cities in Australia.</p>
+            </li>
+            <li>
+              <h3>CTO</h3>
+              <p>A Better Florist<span class="dates">May 2016 – January 2018</span></p>
+              <p class="detail">Owned all technical initiatives, balancing business needs with technical solutions. Built an SMS-based CRM, real-time courier last-mile tracking with automated customer delivery updates, and an internal analytics dashboard for LTV, CAC and inventory forecasting.</p>
+            </li>
           </ul>
         </div>
       </div>
@@ -307,4 +320,3 @@
   </script>
 </body>
 </html>
-
