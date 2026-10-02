@@ -263,17 +263,17 @@
         <div>
           <h2 id="speaking-heading">Conversations on what comes next.</h2>
           <p class="intro">AI, software delivery and the evolving engineering organisation. Selected talks and panel discussions.</p>
-          <!-- After 29 September 2026, move this event to the talks list and add approved session details or a recording. -->
-          <article class="upcoming" aria-labelledby="upcoming-title">
-            <div>
-              <p class="small-label" id="event-status">Upcoming speaking</p>
-              <h3 id="upcoming-title">Collaboration with AI Agents</h3>
-              <p><strong>Tech Week Singapore</strong><br>11:35 am SGT · Marina Bay Sands, Singapore</p>
-            </div>
-            <time class="date-block" datetime="2026-09-29T11:35:00+08:00" aria-label="29 September 2026, 11:35 am Singapore time"><span class="day">29</span><span class="month">Sep 2026</span></time>
-          </article>
           <!-- CONTENT PLACEHOLDER: add verified event/recording links and approved takeaways when available. No non-functional links are shown. -->
           <ul class="talks">
+            <li>
+              <img class="talk-photo" src="images/panel-tech-week-2026.jpg" alt="Gibson Tang speaking on the Collaboration with AI Agents panel at Tech Week Singapore 2026" loading="lazy" decoding="async">
+              <div>
+                <p class="small-label">Panel discussion</p>
+                <h3>Collaboration with AI Agents &ndash; Embracing Opportunities &amp; Overcoming Challenges</h3>
+                <p class="event">Tech Week Singapore 2026, DevOps Live! Theatre</p>
+                <time datetime="2026-09-29">29 September 2026</time>
+              </div>
+            </li>
             <li>
               <img class="talk-photo" src="images/panel-devops-summit-2026-wide.jpg" alt="Gibson Tang and fellow panelists on stage at DevOps Summit Singapore 2026" loading="lazy" decoding="async">
               <div>
@@ -311,12 +311,5 @@
     </section>
   </main>
   <footer><div class="wrap"><p>© 2026 Gibson Tang · Singapore</p><a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
-  <script>
-    // Avoid describing a past event as upcoming if the static page is not updated immediately.
-    const eventStatus = document.getElementById('event-status');
-    if (Date.now() >= Date.parse('2026-09-29T12:00:00+08:00')) {
-      eventStatus.textContent = 'Selected speaking';
-    }
-  </script>
 </body>
 </html>
